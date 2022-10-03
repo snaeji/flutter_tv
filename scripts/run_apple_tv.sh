@@ -3,7 +3,7 @@ set -x
 #added all scripts here to run appletv locally from one script
 
 # set your own path to custom engine here
-export FLUTTER_LOCAL_ENGINE=/Users/Aleksandr_Denisov/Work/original_engine/src
+export FLUTTER_LOCAL_ENGINE=/Users/snaeji/development/flutter-atv/engin_prepped
 
 # Clean old mess
 fvm flutter clean
@@ -21,7 +21,7 @@ cd ios
 #  'debug_sim' - engine for apple tv simulator
 #  'debug' - engine for real apple tv device, debug mode
 #  'release' - engine for real apple tv device, release mode
-sh ../scripts/copy_framework.sh debug_sim FLUTTER_LOCAL_ENGINE
+sh ../scripts/copy_framework.sh release FLUTTER_LOCAL_ENGINE
 
 fvm flutter pub get
 

@@ -9,13 +9,16 @@ set -e
 
 debug_sim=""
 
+
+
+
 BuildAppDebug() {
 
-  HOST_TOOLS=$FLUTTER_LOCAL_ENGINE/out/host_debug_unopt 
+  HOST_TOOLS=/Users/snaeji/development/flutter-atv/engin_prepped/out/host_debug_unopt 
   if [[ "$debug_sim" == "true" ]]; then
-    DEVICE_TOOLS=$FLUTTER_LOCAL_ENGINE/out/ios_debug_sim_unopt/clang_x64
+    DEVICE_TOOLS=/Users/snaeji/development/flutter-atv/engin_prepped/out/ios_debug_sim_unopt/clang_x64
   else
-    DEVICE_TOOLS=$FLUTTER_LOCAL_ENGINE/out/ios_debug_unopt/clang_x64
+    DEVICE_TOOLS=/Users/snaeji/development/flutter-atv/engin_prepped/out/ios_debug_unopt/clang_x64
   fi
 
   ROOTDIR=$(dirname "$PROJECT_DIR")
@@ -118,8 +121,8 @@ BuildAppDebug() {
 
 BuildAppRelease() {
 
-  HOST_TOOLS=$FLUTTER_LOCAL_ENGINE/out/host_release
-  DEVICE_TOOLS=$FLUTTER_LOCAL_ENGINE/out/ios_release/clang_x64
+  HOST_TOOLS=/Users/snaeji/development/flutter-atv/engin_prepped/out/host_release
+  DEVICE_TOOLS=/Users/snaeji/development/flutter-atv/engin_prepped/out/ios_release/clang_x64
 
   ROOTDIR=$(dirname "$PROJECT_DIR")
   OUTDIR=$ROOTDIR/build/ios/Release-iphoneos
@@ -201,12 +204,12 @@ BuildApp() {
   
   echo "Compling /Flutter/App.Framework"
  
-  if [ -z "$FLUTTER_LOCAL_ENGINE" ]; then
+  if [ -z "/Users/snaeji/development/flutter-atv/engin_prepped" ]; then
     echo " └─ERROR: FLUTTER_LOCAL_ENGINE not set!" 
     return 1;
   fi
 
-  echo " └─engine $FLUTTER_LOCAL_ENGINE"
+  echo " └─engine /Users/snaeji/development/flutter-atv/engin_prepped"
 
 
   if [[ "$PLATFORM_NAME" == "appletvsimulator" && "$build_mode" =~ "debug" ]]; then

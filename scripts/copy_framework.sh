@@ -7,7 +7,7 @@
 # Exit on error
 set -e
 
-export FLUTTER_LOCAL_ENGINE=/Users/Aleksandr_Denisov/Work/original_engine/src
+export FLUTTER_LOCAL_ENGINE=/Users/snaeji/development/flutter-atv/engin_prepped
 
 if [ "$1" == "release" ]; then
 	echo "Coping Flutter.framework (release)..."
